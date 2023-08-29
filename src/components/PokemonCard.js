@@ -1,7 +1,7 @@
 import {useState} from "react";
 import { Card } from "semantic-ui-react";
 
-function PokemonCard({pokemon}) {
+function PokemonCard({poke}) {
   
   const [ isFront, setIsFront ] = useState(true)
 
@@ -9,14 +9,13 @@ function PokemonCard({pokemon}) {
     setIsFront(!isFront)
   }
 
-  const { name, sprites, hp} = pokemon
+  const { name, sprites, hp} = poke
 
   return (
     <Card onClick={handleImage}>
       <div>
         <div className="image">
-          {isFront? <img alt={name} src={sprites.front} /> : <img alt={name} src={sprites.back} />}
-          
+          <img src={isFront ? sprites.front : sprites.back} alt={name} />
         </div>
         <div className="content">
           <div className="header">{name}</div>

@@ -29,7 +29,7 @@ function PokemonForm({ onSubmitNewPokemon }) {
     fetch("http://localhost:3001/pokemon", {
       method:"POST",
       headers:{
-        "content-type": "application/json", 
+        "Content-Type": "application/json", 
       },
       body: JSON.stringify(newPoke)
     })
